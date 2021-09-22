@@ -17,26 +17,23 @@ public class StackImpl<T> {
 	}
 
 	private Node<T> top;
+	private int size;
 
 	public StackImpl() {
 		this.top = null;
+		this.size = 0;
 	}
 
 	public T pop() {
 		if(this.top == null) return null;
 		T pop = this.top.data;
 		this.top = top.next;
+		size--;
 		return pop;
 	}
 
 	public int size() {
-		int size = 0;
-		Node<T> curr = this.top;
-		while(curr != null) {
-			size++;	
-			curr = curr.next;
-		}
-		return size;
+		return this.size;
 	}
 
 	public boolean empty() {
@@ -51,6 +48,7 @@ public class StackImpl<T> {
 		Node<T> push = new Node(data);
 		push.next = this.top;
 		this.top = push;
+		size++;
 		return data;
 	}
 
