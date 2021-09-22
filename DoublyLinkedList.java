@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class SinglyLinkedList<T> {
+public class DoublyLinkedList<T> {
 	public static class Node<T> {
 		private T data;
 		private Node<T> next;
@@ -21,7 +21,7 @@ public class SinglyLinkedList<T> {
 	private Node<T> head;
 	private int size;
 
-	public SinglyLinkedList() {
+	public DoublyLinkedList() {
 		this.head = null;
 	}
 
@@ -36,6 +36,7 @@ public class SinglyLinkedList<T> {
 		while(curr.next != null) {
 			curr = curr.next;
 		}
+		insert.prev = curr;
 		curr.next = insert;
 		size++;
 	}
@@ -46,6 +47,7 @@ public class SinglyLinkedList<T> {
 		Node<T> prev = this.head;
 		while(curr.next != null) {
 			if(curr.data == data) {
+				curr.next.prev = prev;
 				prev.next = curr.next;
 				size--;
 				break;
@@ -59,7 +61,12 @@ public class SinglyLinkedList<T> {
 		Node<T> curr = this.head;
 		int cnt = 0;
 		while(curr.next != null) {
-			if(curr.data == data) return cnt;
+			if(curr.data == data) {
+				System.out.println("curr.prev.data: " + curr.prev.data);
+				System.out.println("curr.data: " + curr.data);
+				System.out.println("curr.next.data: " + curr.next.data);
+				return cnt;
+			}
 			cnt++;
 			curr = curr.next;
 		}
@@ -92,7 +99,7 @@ public class SinglyLinkedList<T> {
 	}
 
 	public static void main(String[] args) {
-		SinglyLinkedList<Integer> ll = new SinglyLinkedList<>();
+		DoublyLinkedList<Integer> ll = new DoublyLinkedList<>();
 		System.out.println(ll.toString());
 		ll.insert(4);
 		System.out.println(ll.toString());
@@ -102,7 +109,7 @@ public class SinglyLinkedList<T> {
 		ll.insert(993);
 		ll.insert(34);
 		System.out.println(ll.toString());
-		System.out.println(ll.search(18));
+		ll.search(18);
 		System.out.println(ll.get(2));
 		System.out.println(ll.size());
 	}
