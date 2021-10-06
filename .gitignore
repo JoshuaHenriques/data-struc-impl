@@ -23,3 +23,9 @@
 hs_err_pid*
 
 questions
+arraylist/.ArrayListImpl.java
+linkedlist/.DoublyLinkedList.java
+linkedlist/.SinglyLinkedList.java
+queue/.QueueImpl.java
+stack/.StackImpl.java
+stringbuilder/.StringBuilderImpl.java
