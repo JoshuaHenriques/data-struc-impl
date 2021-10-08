@@ -13,15 +13,15 @@ class HashMap:
 	# insert values into hashmap using seperate chaining
 	def insert(self, key, value):
 		# get the index from the key using pythons built in hash function
-		hashed_key = hash_key(self, key)
+		hashed_key = self.hash_key(self, key)
 		self.hashmap[hashed_key].append(value)
 
 	def search(self, key):
-		hashed_key = hash_key(self, key)
+		hashed_key = self.hash_key(self, key)
 		return self.hashmap[hashed_key].search(key)
 
 	def delete(self, key):
-		hashed_key = hash_key(self, key)
+		hashed_key = self.hash_key(self, key)
 		return self.hashmap[hashed_key].remove(key)
 
 	# def resize():
