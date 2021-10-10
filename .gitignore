@@ -29,3 +29,5 @@ linkedlist/.SinglyLinkedList.java
 queue/.QueueImpl.java
 stack/.StackImpl.java
 stringbuilder/.StringBuilderImpl.java
+
+.vscode

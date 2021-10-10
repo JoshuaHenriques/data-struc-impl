@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Graph<T> {
+class GraphImpl<T> {
 
 	// edges
 	private Map<T, List<T>> map = new HashMap();
@@ -45,7 +45,7 @@ class Graph<T> {
 	public static void main(String args[]) {
   
         // Object of graph is created.
-        Graph<Integer> g = new Graph<Integer>();
+        GraphImpl<Integer> g = new Graph<Integer>();
   
         // edges are added.
         // Since the graph is bidirectional,
