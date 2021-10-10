@@ -3,11 +3,11 @@ import java.util.*;
 class GraphImpl<T> {
 
 	// edges
-	private Map<T, List<T>> map = new HashMap();
+	private Map<T, List<T>> map = new HashMap<>();
 
 	// insert vertex
 	public void addVertex(T v) {
-		this.map.put(v, new LinkedList<T>());
+		this.map.putIfAbsent(v, new LinkedList<T>());
 	}
 
 	public void addEdge(T src, T dest, boolean bi) {
@@ -45,7 +45,7 @@ class GraphImpl<T> {
 	public static void main(String args[]) {
   
         // Object of graph is created.
-        GraphImpl<Integer> g = new Graph<Integer>();
+        GraphImpl<Integer> g = new GraphImpl<Integer>();
   
         // edges are added.
         // Since the graph is bidirectional,
