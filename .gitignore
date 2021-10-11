@@ -31,3 +31,5 @@ stack/.StackImpl.java
 stringbuilder/.StringBuilderImpl.java
 
 .vscode
+
+.*
