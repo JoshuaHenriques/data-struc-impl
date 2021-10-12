@@ -1,3 +1,5 @@
+import java.util.*;
+
 class TrieNode {
     private final Map<Character, TrieNode> children = new HashMap<>();
     private boolean endOfWord;
@@ -15,10 +17,10 @@ class TrieNode {
     }
 }
 
-class Trie {
+public class TrieTreeImpl {
     private TrieNode root;
 
-    Trie() {
+    TrieTreeImpl() {
         root = new TrieNode();
     }
 

@@ -1,4 +1,6 @@
-public class AVLTree {
+import java.util.*;
+
+public class AVLTreeImpl {
 
     public class Node {
         int key;
