@@ -14,7 +14,7 @@ class Node {
 	}
 }
 
-public class BinarySearchTree {
+public class BinarySearchTreeImpl {
 
     Node root;
 
