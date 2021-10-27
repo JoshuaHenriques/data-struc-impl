@@ -51,7 +51,7 @@ public class SinglyLinkedList<T> {
 			if(curr.data == data) {
 				prev.next = curr.next;
 				size--;
-				break;
+				return;
 			}
 			prev = curr;
 			curr = curr.next;
@@ -72,12 +72,12 @@ public class SinglyLinkedList<T> {
 	public T get(int index) {
 		Node<T> curr = this.head;
 		int cnt = 0;
-		while(curr.next != null && cnt != index && cnt < size) {
+		while(curr.next != null && cnt != index) {
 			cnt++;
 			curr = curr.next;
 		}
 		if(cnt == index) return curr.data;
-		else return null;
+		return null;
 	}
 
 	public int size() {
@@ -108,5 +108,6 @@ public class SinglyLinkedList<T> {
 		System.out.println(ll.search(18));
 		System.out.println(ll.get(2));
 		System.out.println(ll.size());
+		System.out.println(ll.get(5));
 	}
 }
