@@ -30,13 +30,13 @@ public class SinglyLinkedList<T> {
 
 	public void insert(T data) {
 		Node<T> insert = new Node<>(data);
-		if(this.head == null) {
+		if (this.head == null) {
 			this.head = insert;
 			size++;
 			return;
 		}
 		Node<T> curr = this.head;
-		while(curr.next != null) {
+		while (curr.next != null) {
 			curr = curr.next;
 		}
 		curr.next = insert;
@@ -44,11 +44,12 @@ public class SinglyLinkedList<T> {
 	}
 
 	public void delete(T data) {
-		if(this.head == null) return;
+		if (this.head == null)
+			return;
 		Node<T> curr = this.head;
 		Node<T> prev = this.head;
-		while(curr.next != null) {
-			if(curr.data == data) {
+		while (curr.next != null) {
+			if (curr.data == data) {
 				prev.next = curr.next;
 				size--;
 				return;
@@ -61,22 +62,24 @@ public class SinglyLinkedList<T> {
 	public int search(T data) {
 		Node<T> curr = this.head;
 		int cnt = 0;
-		while(curr.next != null) {
-			if(curr.data == data) return cnt;
+		while (curr.next != null && curr.data != data) {
 			cnt++;
 			curr = curr.next;
 		}
+		if (curr.data == data)
+			return cnt;
 		return -1;
 	}
 
 	public T get(int index) {
 		Node<T> curr = this.head;
 		int cnt = 0;
-		while(curr.next != null && cnt != index) {
+		while (curr.next != null && cnt != index) {
 			cnt++;
 			curr = curr.next;
 		}
-		if(cnt == index) return curr.data;
+		if (cnt == index)
+			return curr.data;
 		return null;
 	}
 
@@ -87,7 +90,7 @@ public class SinglyLinkedList<T> {
 	public String toString() {
 		List<T> list = new ArrayList<>();
 		Node<T> curr = this.head;
-		while(curr != null) {
+		while (curr != null) {
 			list.add(curr.data);
 			curr = curr.next;
 		}
@@ -108,6 +111,7 @@ public class SinglyLinkedList<T> {
 		System.out.println(ll.search(18));
 		System.out.println(ll.get(2));
 		System.out.println(ll.size());
-		System.out.println(ll.get(5));
+		System.out.println(ll.get(4));
+		System.out.println(ll.search(993));
 	}
 }

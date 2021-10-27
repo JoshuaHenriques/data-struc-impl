@@ -36,10 +36,10 @@ class LinkedList:
 	def search(self, data):
 		curr = self.head
 		cnt = 0
-		while curr.next:
-			if curr.data == data: return cnt
+		while curr.next and curr.data != data:
 			cnt += 1
 			curr = curr.next
+		if curr.data == data: return cnt
 		return -1
 
 	def get(self, index):
@@ -69,9 +69,11 @@ if __name__ == "__main__":
 	linked_list.insert(4)
 	linked_list.insert(7)
 	linked_list.insert(8)
+	linked_list.insert(19)
 	linked_list.to_string()
 	linked_list.get_size()
 	linked_list.delete(6)
 	linked_list.to_string()
 	print(linked_list.search(8))
 	print(linked_list.get(3))
+	print(linked_list.search(19))
