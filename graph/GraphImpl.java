@@ -14,7 +14,7 @@ class GraphImpl<T> {
 		this.adjVerticies.values().stream().forEach(e -> e.remove(v));
 		this.adjVerticies.remove(v);	
 	}
-
+	// Undirected
 	public void addEdge(T src, T dest) {
 		if (!this.adjVerticies.containsKey(src)) addVertex(src);
 		if (!this.adjVerticies.containsKey(dest)) addVertex(dest);
