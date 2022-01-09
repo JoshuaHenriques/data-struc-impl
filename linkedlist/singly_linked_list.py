@@ -18,7 +18,7 @@ class LinkedList:
 		while curr.next:
 			curr = curr.next
 		curr.next = node
-		curr = node
+		## curr = node ##
 		self.size += 1
 
 	def delete(self, data):

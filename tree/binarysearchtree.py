@@ -84,6 +84,6 @@ if __name__ == "__main__":
 	bst.insert(1)
 	bst.insert(29)
 	bst.inorder()
-	print(bst.search(2))
+	print(bst.search(1))
 	bst.delete(1)
 	print(bst.search(1))

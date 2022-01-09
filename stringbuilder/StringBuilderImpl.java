@@ -81,7 +81,7 @@ class StringBuilderImpl {
 		string.insert('!');
 		System.out.println(string.toString());
 		System.out.println(string.size());	
-		string.delete('!');
+		string.delete('o');
 		System.out.println(string.toString());
 		System.out.println(string.size());	
 		System.out.println(string.get('o'));
